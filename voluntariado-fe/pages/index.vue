@@ -23,6 +23,15 @@
                     :options="options"
                   ></b-form-select>
                 </div>
+                <div class="boton">
+                  <button
+                    type="button"
+                    class="btn btn-primary"
+                    @click="handleAbilities"
+                  >
+                    Mostrar
+                  </button>
+                </div>
               </b-col>
             </b-row>
           </b-container>
@@ -68,19 +77,27 @@ h1 {
   justify-content: center;
   color: #ffffff;
 }
+.boton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2rem;
+  margin-bottom: 0rem;
+}
 </style>
 
 <script>
 import Vue from "vue";
 import { LMap, LTileLayer, LMarker } from "vue2-leaflet";
 import "leaflet/dist/leaflet.css";
+import axios from "axios";
 
 Vue.component("l-map", LMap);
 Vue.component("l-tile-layer", LTileLayer);
 Vue.component("l-marker", LMarker);
 
 export default {
-  components: { 
+  components: {
     LMap,
     LTileLayer,
     LMarker,
@@ -90,17 +107,39 @@ export default {
       url: "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
       attribution:
         '&copy; <a target="_blank" href="http://osm.org/copyright">OpenStreetMap</a> contributors',
-      zoom: 10,
-      center: [40.505, -0.159],
-      markerLatLng: [[40.504, -0.159], [40.506, -0.17]],
+      zoom: 5,
+      center: [-33.45694, -70.64827],
+      markerLatLng: [[-33.45694, -70.64827]],
       selected: null,
       options: [
         { value: null, text: "Seleccione una región" },
-        { value: "region1", text: "Region1" },
-        { value: "region2", text: "Region2" },
-        { value: "region2", text: "Region3" },
+        { value: 6, text: "Región del Libertador Bernardo O'Higgins" },
+        { value: "10", text: "Región de Los Lagos" },
+        { value: "3", text: "Región de Atacama" },
+        { value: "13", text: "Región Metropolitana de Santiago" },
+        { value: "11", text: "Región de Aysen del Gral.Ibañez del Campo" },
+        { value: "9", text: "Región de La Araucanía" },
+        { value: "7", text: "Región del Maule" },
+        { value: "5", text: "Region de Valparaíso" },
       ],
     };
+  },
+  methods: {
+    handleAbilities() {
+      console.log(this.selected);
+      axios
+        .get("http://localhost:8081/voluntario/habilidades", {
+          params: {
+            codRegi: this.selected,
+          },
+        })
+        .then((response) => {
+          this.markerLatLng=response.data;
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    },
   },
 };
 </script>
