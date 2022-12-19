@@ -117,7 +117,6 @@ export default {
         { value: "10", text: "Región de Los Lagos" },
         { value: "3", text: "Región de Atacama" },
         { value: "13", text: "Región Metropolitana de Santiago" },
-        { value: "11", text: "Región de Aysen del Gral.Ibañez del Campo" },
         { value: "9", text: "Región de La Araucanía" },
         { value: "7", text: "Región del Maule" },
         { value: "5", text: "Region de Valparaíso" },
