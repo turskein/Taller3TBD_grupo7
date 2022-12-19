@@ -11,7 +11,6 @@ public class Tarea {
     private String[] habilidad;
     private String estado_tarea;
     private Ranking[] rankings;
-
     
 
     public Tarea(String id, String nombre, String[] habilidad, String estado_tarea, Ranking[] rankings) {

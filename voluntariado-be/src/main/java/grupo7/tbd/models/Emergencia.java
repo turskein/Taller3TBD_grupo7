@@ -8,15 +8,15 @@ public class Emergencia {
     private String intitucion;
     private String nombre;
     private String[] habilidad;
+    private Location location;
 
-    
-
-    public Emergencia(String id, String intitucion, String nombre, String[] habilidad) {
+    public Emergencia(String id, String intitucion, String nombre, String[] habilidad, Location location) {
         super();
         this.id = id;
         this.intitucion = intitucion;
         this.nombre = nombre;
         this.habilidad = habilidad;
+        this.location = location;
     }
 
     public String getId() {
@@ -50,4 +50,14 @@ public class Emergencia {
     public void setHabilidad(String[] habilidad) {
         this.habilidad = habilidad;
     }
+
+    public Location getLocation() {
+        return location;
+    }
+
+    public void setLocation(Location location) {
+        this.location = location;
+    }
+
+    
 }

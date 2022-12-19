@@ -9,7 +9,6 @@ import java.util.List;
 
 @RepositoryRestResource(collectionResourceRel = "tarea", path = "tarea")
 public interface TareaRepository extends MongoRepository<Tarea, String>{
-
     @Query("{}")
     public List<Tarea> findAll();
     
