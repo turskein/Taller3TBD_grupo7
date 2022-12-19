@@ -9,14 +9,16 @@ public class Emergencia {
     private String nombre;
     private String[] habilidad;
     private Location location;
+    private Tarea[] tarea;
 
-    public Emergencia(String id, String intitucion, String nombre, String[] habilidad, Location location) {
+    public Emergencia(String id, String intitucion, String nombre, String[] habilidad, Location location, Tarea[] tarea) {
         super();
         this.id = id;
         this.intitucion = intitucion;
         this.nombre = nombre;
         this.habilidad = habilidad;
         this.location = location;
+        this.tarea = tarea;
     }
 
     public String getId() {
@@ -59,5 +61,11 @@ public class Emergencia {
         this.location = location;
     }
 
-    
+    public Tarea[] getTarea() {
+        return tarea;
+    }
+
+    public void setTarea(Tarea[] tarea) {
+        this.tarea = tarea;
+    }
 }

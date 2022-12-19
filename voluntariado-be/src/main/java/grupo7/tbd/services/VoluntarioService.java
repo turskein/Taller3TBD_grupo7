@@ -51,10 +51,18 @@ public class VoluntarioService {
     }
 
     @GetMapping("/habilidades")
-    List<voluntario> getvoluntariosNearOf(@RequestParam int codRegi){
+    List<double[]> getvoluntariosNearOf(@RequestParam int codRegi){
         Division divisionSelected = divisionRepository.findCODREG(codRegi);
+        if(divisionSelected==null){
+            return null;
+        }
         List<voluntario> retorno = voluntarioRepository.findNearRegion(divisionSelected.getGeometry());
-        return retorno;
+        List<double[]> coors = new ArrayList<>();
+        for (int i = 0; i < retorno.size(); i++) {
+            coors.add(retorno.get(i).getLocation().getCoordinates());
+        }
+
+        return coors;
     }
 
     @GetMapping("/division")
