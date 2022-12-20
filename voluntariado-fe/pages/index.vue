@@ -4,7 +4,7 @@
       <v-row>
         <v-col cols="12">
           <v-card class="text-center">
-            <h1>Habilidades disponibles - Resumen</h1>
+            <h1>Habilidades disponibles - RESUMEN</h1>
           </v-card>
 
           <b-container class="fluid container_h5">
@@ -87,6 +87,14 @@ h1 {
 </style>
 
 <script>
+import { Icon } from 'leaflet';
+
+delete Icon.Default.prototype._getIconUrl;
+Icon.Default.mergeOptions({
+  iconRetinaUrl: require('leaflet/dist/images/marker-icon-2x.png'),
+  iconUrl: require('leaflet/dist/images/marker-icon.png'),
+  shadowUrl: require('leaflet/dist/images/marker-shadow.png'),
+});
 import Vue from "vue";
 import { LMap, LTileLayer, LMarker } from "vue2-leaflet";
 import "leaflet/dist/leaflet.css";
@@ -113,10 +121,18 @@ export default {
       selected: null,
       options: [
         { value: null, text: "Seleccione una región" },
+<<<<<<< Updated upstream
         { value: 6, text: "Región del Libertador Bernardo O'Higgins" },
         { value: "10", text: "Región de Los Lagos" },
         { value: "3", text: "Región de Atacama" },
         { value: "13", text: "Región Metropolitana de Santiago" },
+=======
+        { value: "2", text: "Región del Libertador Bernardo O'Higgins" },
+        { value: "4", text: "Región de Los Lagos" },
+        { value: "4", text: "Región de Atacama" },
+        { value: "5", text: "Región Metropolitana de Santiago" },
+        { value: "11", text: "Región de Aysen del Gral.Ibañez del Campo" },
+>>>>>>> Stashed changes
         { value: "9", text: "Región de La Araucanía" },
         { value: "7", text: "Región del Maule" },
         { value: "5", text: "Region de Valparaíso" },
@@ -134,6 +150,7 @@ export default {
         })
         .then((response) => {
           this.markerLatLng=response.data;
+          console.log(response.data)
         })
         .catch((error) => {
           console.log(error);

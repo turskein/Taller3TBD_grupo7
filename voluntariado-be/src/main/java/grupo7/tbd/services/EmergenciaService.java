@@ -47,4 +47,10 @@ public class EmergenciaService {
     void deleteEmergencia(){
         emergenciaRepository.deleteAll();
     }
+
+    @GetMapping("/activos")
+    List<Emergencia> getActiveTasks(){
+        return emergenciaRepository.activeEstate();
+    }
+
 }

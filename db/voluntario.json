@@ -1,0 +1,37 @@
+[{
+  "_id": {
+    "$oid": "639f7fd6c0b59e14c64bd7cc"
+  },
+  "nombre": "Francisco Salfate",
+  "habilidad": [
+    "hab1",
+    "hab2",
+    "hab3"
+  ],
+  "location": {
+    "type": "Point",
+    "coordinates": [
+      -12.2,
+      25.6
+    ]
+  },
+  "_class": "grupo7.tbd.models.voluntario"
+},{
+  "_id": {
+    "$oid": "639ff7996219274fafc90b6a"
+  },
+  "nombre": "Francisco Salfate",
+  "habilidad": [
+    "hab1",
+    "hab2",
+    "hab3"
+  ],
+  "location": {
+    "type": "Point",
+    "coordinates": [
+      -80.77637951065657,
+      -33.72190049032606
+    ]
+  },
+  "_class": "grupo7.tbd.models.voluntario"
+}]

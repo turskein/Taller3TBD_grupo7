@@ -1,0 +1,103 @@
+[{
+  "_id": {
+    "$oid": "63a00e452e30cd2de9432e96"
+  },
+  "intitucion": "jajxd",
+  "nombre": "em1",
+  "habilidad": [
+    "hab1",
+    "hab2",
+    "hab3"
+  ],
+  "location": {
+    "type": "Point",
+    "coordinates": [
+      -80.23,
+      -45.12
+    ]
+  },
+  "tarea": [
+    {
+      "nombre": "tar1",
+      "habilidad": [
+        "hab1",
+        "hab2",
+        "hab3"
+      ],
+      "estado_tarea": "activo",
+      "rankings": []
+    },
+    {
+      "nombre": "tar2",
+      "habilidad": [
+        "hab1",
+        "hab2",
+        "hab3"
+      ],
+      "estado_tarea": "inactivo",
+      "rankings": []
+    },
+    {
+      "nombre": "tar3",
+      "habilidad": [
+        "hab1",
+        "hab2",
+        "hab3"
+      ],
+      "estado_tarea": "activo",
+      "rankings": []
+    }
+  ],
+  "_class": "grupo7.tbd.models.Emergencia"
+},{
+  "_id": {
+    "$oid": "63a00e632e30cd2de9432e97"
+  },
+  "intitucion": "jajxd",
+  "nombre": "em2",
+  "habilidad": [
+    "hab1",
+    "hab2",
+    "hab3"
+  ],
+  "location": {
+    "type": "Point",
+    "coordinates": [
+      -80.23,
+      -45.12
+    ]
+  },
+  "tarea": [
+    {
+      "nombre": "tar4",
+      "habilidad": [
+        "hab1",
+        "hab2",
+        "hab3"
+      ],
+      "estado_tarea": "activo",
+      "rankings": []
+    },
+    {
+      "nombre": "tar5",
+      "habilidad": [
+        "hab1",
+        "hab2",
+        "hab3"
+      ],
+      "estado_tarea": "inactivo",
+      "rankings": []
+    },
+    {
+      "nombre": "tar6",
+      "habilidad": [
+        "hab1",
+        "hab2",
+        "hab3"
+      ],
+      "estado_tarea": "activo",
+      "rankings": []
+    }
+  ],
+  "_class": "grupo7.tbd.models.Emergencia"
+}]

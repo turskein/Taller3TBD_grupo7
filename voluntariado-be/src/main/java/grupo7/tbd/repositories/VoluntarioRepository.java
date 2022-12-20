@@ -13,6 +13,6 @@ public interface VoluntarioRepository extends MongoRepository<voluntario, String
     @Query("{}")
     List<voluntario> findAll();
 
-    @Query("find({'location':{$geoWithin:{$geometry:?0}}})")
+    @Query(value="{'location':{$geoWithin:{$geometry:?0}}}")
     public List<voluntario> findNearRegion(geometry geometry);
 }
